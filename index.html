@@ -1,107 +1,77 @@
 <!DOCTYPE html>
-<html lang="en-US">
-    <!---my first website body part-->
-    <body style="background-color: powderblue;">
-        <h1 style="font-size: 60px;">
-            My First Heading
-        </h1>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;1,300&family=Sacramento&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="CSS\styles.css">
+    <link rel="icon" href="images\favicon.ico">
+    <meta charset="utf-8">
+    <title>Kousik Pramanik</title>
+  </head>
+  <body>
+
+    <div class="top-container">
+      <img  class="top-cloud" src="images\cloud.png" alt="">
+      <h1>I'm Kousik Pramanik</h1>
+      <h2>Innovator,Problem Solver,Quick Learner,Hard Worker,Self Disciplined.</h2>
+
+      <img class="bottom-cloud" src="images\cloud.png" alt="">
+      <img src="\images\mountain.png" alt="">
+    </div>
 
 
-        <a href="C:\Users\KOUSHIK MANDAL\Pictures\Captures/dipika.jpg"><img src="C:\Users\KOUSHIK MANDAL\Pictures\Captures/dipika.jpg" alt="DIPIKA" width="104px" height="142"></a>
-        <button onclick="document.location = 'C:/Users/KOUSHIK%20MANDAL/Music/mywebsite/index.html'">HTML Tutorial</button>
+
+    <!-- Second Section -->
 
 
-        <p title="I am Koushik" style="color: blue;">
-            My First Paragraph
-        </p>
 
-        <button style="background-color: blueviolet;"> <a href="D:\ALL CODING\New folder\HOTEL\major">Login</a></button>
+    <div class="middle-container">
+      <div class="profile">
+        <img class="profile-image" src="images\profile.jpg" alt="profile-image">
+        <h2>Hello.</h2>
+        <p>I am enthusiastic Software Developer, Web Designer and Developer.</p>
+      </div>
+      <hr>
+      <div class="skills">
+        <h2>My Skills.</h2>
+        <div class="skill-row">
+          <img class="code-image" src="images\browser.png" alt="">
+          <h3>Programming Languages:</h3>
+            <p>C , C++, JAVA, OOPs, Linux Shell Scripting ,Linux system commands, VB6.0, Basic knowledge of VB.net and python</p>
+        </div>
+        <div class="skill-row">
+          <img class="web-image" src="images\web.png" alt="Web">
+          <h3>Web Languages:</h3>
+          <p>HTML, css, Java script, Jquey, php</p>
+        </div>
+        <div class="skill-row">
+          <img class="server-image" src="images\server.jpg" alt="server">
+          <h3>Windows Server Administration:</h3>
+          <p>Windows server administrator(upto date), AD DS & Group policy management. DHCP server configuration</p>
+        </div>
+      </div>
+      </div>
+      <hr>
+      <div class="contact-me">
+        <h2>Get In Touch</h2>
+        <h3></h3>
+        <p></p>
+        <a class="btn" href="mailto:kousikpramanik539@gmail.com">CONTACT ME</a>
+      </div>
+    </div>
 
-        <pre style="text-align: center;">
-            <strong style="color: blue;">Linux Subsystem (WSL) installed on your system.</strong> 
-            <em>Windows <mark style="color: rgb(96, 141, 13);">Linux</mark> Subsystem (WSL) installed on your system.</em>
-            Windows <del>Linux</del> Subsystem (WSL) installed on your system.
-            <blockquote cite="C:\Users\KOUSHIK MANDAL\Pictures\Captures/">Windows <del>Linux</del> Subsystem (WSL) installed on your system.</blockquote> 
-            Windows<sup>Linux</sup> Subsystem (WSL)<abbr title="world Health Organization">WHO</abbr> installed on your system.
-        </pre>
+<!-- Third Section -->
 
-        <img src="C:\Users\KOUSHIK MANDAL\Pictures\Captures\sujata.jpg" alt="workplace" usemap="#workmap" width="400" height="379">
-
-        <map name="workmap ">
-            <area shape="rect" coords="120,40,300,400" href="C:\Users\KOUSHIK MANDAL\Pictures\Captures\sujata.jpg" alt="sujata">
-            <area shape="rect" coords="290,172,333,250" href="C:\Users\KOUSHIK MANDAL\Pictures\Captures\sujata.jpg" alt="shart">
-            <area shape="circle" coords="337,300,44" href="C:\Users\KOUSHIK MANDAL\Pictures\Captures\sujata.jpg" alt="woo">
-        </map>
-
-        <table style="width: 500px; height: 100px;" >
-            <caption>Monthly Savings</caption>
-            <tr>
-                <th>Month</th>
-                <th>Savings</th>
-            </tr>
-            <tr>
-                <td>January</td>
-                <td>$100</td>
-            </tr>
-            <tr>
-                <td>February</td>
-                <td>$50</td>
-            </tr>
-        </table>
-
-        <iframe src="file:///C:/Users/KOUSHIK%20MANDAL/Music/mywebsite/index.html" frameborder="4px" style="height: 200px; width: 800px; "></iframe>
-
-        <style>
-            table, th, td {
-                border: 1px solid black;
-                border-collapse: collapse;
-            }
-
-            th, td {
-                padding: 5px;
-                text-align: left;
-            }
-        </style>
-        <p id="demo"></p>
-
-        <script>
-            document.getElementById("demo").innerHTML="Hello javaScript!!";
-        </script>
-
-        <hr>
-
-        <p>Click the button to get your coordinates.</p>
-        <button onclick="getLocation()">Try It</button>
-
-        <p id="demo"></p>
-
-        <script>
-            var x = document.getElementById("demo");
-            function getLocation(){
-                if(navigator.geolocation){
-                    navigator.geolocation.getCurrentPosition(showPosition);
-                }else{
-                    x.innerHTML = "Geolocation is not supported by this browser.";
-                }
-            }
-
-            function showPosition(position){
-                x.innerHTML="Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
-            }
-
-        </script>
-
-        <hr>
-        <h2 style="background-color: rosybrown;">
-            Hello my first website 
-        </h2>
-        <p  style="color: rgb(10, 22, 59);">
-            Windows <q>Subsystem</q> Subsystem (WSL) installed on your system.
-            <bdo dir="rtl">Windows<cite>Subsystem</cite> Subsystem (WSL) installed on your system.</bdo> 
-        </p>
-        <hr>
-       
+    <div class="bottom-container">
+      <a class="footer-link" href="#">LinkedIn</a>
+      <a class="footer-link" href="#">Twitter</a>
+      <a class="footer-link" href="#">Website</a>
+      <p>Copyright © 2020 Kousik Pramanik.</p>
+    </div>
 
 
-    </body>
+
+
+  </body>
 </html>
