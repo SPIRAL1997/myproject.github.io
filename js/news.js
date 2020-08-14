@@ -7,7 +7,8 @@
 1. Vars and Inits
 2. Set Header
 3. Init Menu
-4. Init Google Map
+4. Init Magic
+5. Init Masonry
 
 
 ******************************/
@@ -25,7 +26,7 @@ $(document).ready(function()
 	var header = $('.header');
 	var menu = $('.menu');
 	var menuActive = false;
-	var map;
+	var ctrl = new ScrollMagic.Controller();
 
 	setHeader();
 
@@ -40,7 +41,8 @@ $(document).ready(function()
 	});
 
 	initMenu();
-	initGoogleMap();
+	initMagic();
+	initMasonry();
 
 	/* 
 
@@ -98,58 +100,50 @@ $(document).ready(function()
 		menuActive = false;
 	}
 
-	/* 
+	/*
 
-	4. Init Google Map
+	4. Init Magic
 
 	*/
 
-	function initGoogleMap()
+	function initMagic()
 	{
-		var myLatlng = new google.maps.LatLng(34.063685,-118.272936);
-    	var mapOptions = 
-    	{
-    		center: myLatlng,
-	       	zoom: 14,
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			draggable: true,
-			scrollwheel: false,
-			zoomControl: true,
-			zoomControlOptions:
-			{
-				position: google.maps.ControlPosition.RIGHT_CENTER
-			},
-			mapTypeControl: false,
-			scaleControl: false,
-			streetViewControl: false,
-			rotateControl: false,
-			fullscreenControl: true,
-			styles:
-			[
-			  {
-			    "featureType": "road.highway",
-			    "elementType": "geometry.fill",
-			    "stylers": [
-			      {
-			        "color": "#ffeba1"
-			      }
-			    ]
-			  }
-			]
-    	}
-
-    	// Initialize a map with options
-    	map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-		// Re-center map after window resize
-		google.maps.event.addDomListener(window, 'resize', function()
+		if($('.magic_up').length)
 		{
-			setTimeout(function()
+			var magicUp = $('.magic_up');
+	    	magicUp.each(function()
+	    	{
+	    		var ele = this;
+	    		var smScene = new ScrollMagic.Scene(
+		    	{
+		    		triggerElement:ele,
+		    		triggerHook:'onEnter',
+		    		offset:-200,
+		    		reverse:false
+		    	})
+		    	.setTween(TweenMax.from(ele, 1, {y:200, autoAlpha:0, ease: Circ.easeOut, delay:0.3}))
+		    	.addTo(ctrl);	
+	    	});
+		}
+	}
+
+	/* 
+
+	5. Init Masonry
+
+	*/
+
+	function initMasonry()
+	{
+		if($('.blog_post_container').length)
+		{
+			$('.blog_post_container').masonry(
 			{
-				google.maps.event.trigger(map, "resize");
-				map.setCenter(myLatlng);
-			}, 1400);
-		});
+				itemSelector:'.blog_post',
+				columnWidth:'.blog_post',
+				gutter:30
+			});
+		}
 	}
 
 });
